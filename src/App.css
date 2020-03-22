@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.Background {
+  background: url(./resources/images/background.svg) center center fixed;
+  background-position: center;
+  background-color: #1F0A06;
   min-height: 100vh;
+}
+
+.HeaderContainer {
+  background-color: #1B0804;
+  position: absolute;
+  height: 70px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.49);
+}
+
+.Logo {
+  height: 50px;
+  margin-left: 30px;
+}
+
+.InputContainer {
+  background: #C4C4C4;
+  border: 2px solid #B49B84;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-right: 5vw;
+  width: 14em;
+  height: 2.5em;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  font-family: Roboto;
 }
 
-.App-link {
-  color: #61dafb;
+.Input {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.GamesContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 4.5em 0em 0em 0em;
+  padding-bottom: 3em;
+  justify-content: space-evenly;
+}
+
+.CardContainer {
+  display: flex;
+  margin: 0em 0.8em 0em 0.8em;
+  width: 350px;
+  height: 14em;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1.5px solid #e9a522;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.CardName {
+  display: inline-block;
+  position: relative;
+  top: 20px;
+  left: 50px;
+  background-color: #E9A522;
+  z-index: 5;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.TitleText {
+  
+  height: 10px;
+  position: relative;
+  font-size: 18px;
+  margin: 0.1em 0.2em 0.1em 0.2em ;
+  width: 100%; height: 100%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  font-family: Roboto;
+}
+
+.FooterContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 5px;
+  background-color: #E9A522;
+  height: 3em; width: 100%;
+}
+
+.MainImage {
+  width: 35%;
+  background-color: #F3EFEF;
+}
+
+.MiddleContainer {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: space-evenly;
+}
+.TextContainer {
+  padding: 0.1em 0.3em 0px 0.3em;
+  align-items: center;
+
+}
+
+.TextSubdesc {
+  font-family: Roboto;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 17.5px;
+}
+
+.Card {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+.FooterIcon {
+  height: 1.5em;
+  fill: #1F0A06;
+}
+
+.Division {
+  border: 1px solid #d56b04;
+  height: 25px;
+}
+
+.TextDesc {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: Roboto;
+  margin-left: 5px;
+  color: #1F0A06;
+  overflow: auto;
+}
+
+.DescContainer {
+  align-items: center;
+  display: flex;
+}
+
+.ActivityIndicator {
+  position: absolute;
+  top: 40vh;
+  left: 47vw;
 }
