@@ -3,14 +3,14 @@
 .Background {
   background: url(./resources/images/background.svg) center center fixed;
   background-position: center;
-  background-color: #1F0A06;
+  background-color: #1f0a06;
   min-height: 100vh;
 }
 
 .HeaderContainer {
-  background-color: #1B0804;
+  background-color: #1b0804;
   position: absolute;
-  height: 70px;
+  height: 4.5em;
   left: 0px;
   right: 0px;
   top: 0px;
@@ -27,8 +27,8 @@
 }
 
 .InputContainer {
-  background: #C4C4C4;
-  border: 2px solid #B49B84;
+  background: #c4c4c4;
+  border: 2px solid #b49b84;
   box-sizing: border-box;
   border-radius: 5px;
   margin-right: 5vw;
@@ -56,8 +56,8 @@
 .CardContainer {
   display: flex;
   margin: 0em 0.8em 0em 0.8em;
-  width: 350px;
-  height: 14em;
+  width: 21.875em;
+  height: 14.4em;
   background-color: #fff;
   border-radius: 5px;
   border: 1.5px solid #e9a522;
@@ -70,19 +70,19 @@
   position: relative;
   top: 20px;
   left: 50px;
-  background-color: #E9A522;
+  background-color: #e9a522;
   z-index: 5;
   border-radius: 3px;
   margin: 5px;
 }
 
 .TitleText {
-  
   height: 10px;
   position: relative;
   font-size: 18px;
-  margin: 0.1em 0.2em 0.1em 0.2em ;
-  width: 100%; height: 100%;
+  margin: 0.1em 0.2em 0.1em 0.2em;
+  width: 100%;
+  height: 100%;
   font-style: normal;
   font-weight: bold;
   font-size: 23px;
@@ -93,14 +93,15 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 5px;
-  background-color: #E9A522;
-  height: 3em; width: 100%;
+  background-color: #e9a522;
+  padding-top: 0.3em;
+  height: 2.2em;
+  width: 100%;
 }
 
 .MainImage {
   width: 35%;
-  background-color: #F3EFEF;
+  background-color: #f3efef;
 }
 
 .MiddleContainer {
@@ -110,9 +111,8 @@
   justify-content: space-evenly;
 }
 .TextContainer {
-  padding: 0.1em 0.3em 0px 0.3em;
+  padding: 0.2em 0.3em 0em 0.3em;
   align-items: center;
-
 }
 
 .TextSubdesc {
@@ -128,22 +128,23 @@
 }
 
 .FooterIcon {
-  height: 1.5em;
-  fill: #1F0A06;
+  height: 1.3em;
+  fill: #1f0a06;
 }
 
 .Division {
   border: 1px solid #d56b04;
-  height: 25px;
+  height: 1.7em;
+  margin-bottom: 0.15em;
 }
 
 .TextDesc {
   font-style: normal;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.9em;
   font-family: Roboto;
   margin-left: 5px;
-  color: #1F0A06;
+  color: #1f0a06;
   overflow: auto;
 }
 
