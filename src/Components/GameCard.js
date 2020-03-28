@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import players from '../resources/images/players.svg'
 import age from '../resources/images/age.svg'
 import time from '../resources/images/time.svg'
@@ -7,6 +7,7 @@ import difficulty from '../resources/images/difficulty.svg'
 const GameCard = (props) => {
 
   return (
+    
     <div className="Card">
 
       <div className="CardName">
@@ -50,6 +51,7 @@ const GameCard = (props) => {
       </div>
 
     </div>
+
   )
 }
 

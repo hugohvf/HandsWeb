@@ -5,6 +5,8 @@ import Header from "./Components/Header";
 import "materialize-css/dist/css/materialize.min.css";
 import GameCard from "./Components/GameCard";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 const ApiURL =
   "https://script.google.com/macros/s/AKfycbw5ilBrZfZXABaqDOXTaY_E1O66qV1oLb9ps5gxzrA1rSphDtup/exec";
@@ -13,6 +15,9 @@ function App() {
   const [jogos, setJogos] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const [appear, setAppear] = useState(true)
+
 
   useEffect(() => {
     var result = fetch(ApiURL)
@@ -33,7 +38,8 @@ function App() {
           style={{ color: "#E9A522" }}
         ></CircularProgress>
       ) : (
-        <div className="GamesContainer">
+        <TransitionGroup className="GamesContainer">
+         
           {jogos
             .filter(item =>
               search.length > 0
@@ -42,9 +48,18 @@ function App() {
                 : item
             )
             .map(jogo => (
+              <CSSTransition
+              in={appear}
+              leave={true}
+              appear={true}
+              timeout={2000}
+              classNames="fade"
+            >
               <GameCard jogo={jogo} />
+
+            </CSSTransition>
             ))}
-        </div>
+        </TransitionGroup>
       )}
     </div>
   );
