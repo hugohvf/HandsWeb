@@ -28,7 +28,10 @@ const GameCard = (props) => {
         <div className="FooterContainer">
           <div className="DescContainer">
             <img className="FooterIcon" src={players}/>
-            <p className="TextDesc">{props.jogo.minPlayers} a {props.jogo.maxPlayers}</p>
+            <p className="TextDesc">
+              {props.jogo.minPlayers == props.jogo.maxPlayers ?
+               props.jogo.maxPlayers : 
+               props.jogo.minPlayers + ' a ' + props.jogo.maxPlayers}</p>
           </div>
           <div className="Division"></div>
           <div className="DescContainer">

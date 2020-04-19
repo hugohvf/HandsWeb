@@ -5,28 +5,49 @@ import Header from "./Components/Header";
 import "materialize-css/dist/css/materialize.min.css";
 import GameCard from "./Components/GameCard";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const ApiURL =
   "https://script.google.com/macros/s/AKfycbw5ilBrZfZXABaqDOXTaY_E1O66qV1oLb9ps5gxzrA1rSphDtup/exec";
-  
+
 function App() {
   const [jogos, setJogos] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const [appear, setAppear] = useState(true)
-
+  const [appear, setAppear] = useState(true);
 
   useEffect(() => {
     var result = fetch(ApiURL)
-      .then(response => response.json())
-      .then(d => {
-        setJogos(d.filter(item => item.game.length > 0));
+      .then((response) => response.json())
+      .then((d) => {
+        d = d.map((game) => {
+          let title = game.game;
+          title = title
+            .toLowerCase()
+            .split(" ")
+            .map((word, i) => {
+              console.log(i);
+              let firstLetter = word.charAt(0).toUpperCase();
+              if (
+                (firstLetter === "E" ||
+                  firstLetter === "A" ||
+                  firstLetter === "O" ||
+                  firstLetter === "À" ) &&
+                word.length === 1 &&
+                i !== 0
+              )
+                return word;
+              return firstLetter + word.slice(1);
+            })
+            .join(" ");
+          return { ...game, game: title };
+        });
+
+        setJogos(d.filter((item) => item.game.length > 0));
         setLoading(false);
       });
-      console.log(jogos);
+    console.log(jogos);
   }, []);
 
   return (
@@ -39,25 +60,23 @@ function App() {
         ></CircularProgress>
       ) : (
         <TransitionGroup className="GamesContainer">
-         
           {jogos
-            .filter(item =>
+            .filter((item) =>
               search.length > 0
                 ? item.game.toUpperCase().includes(search.toUpperCase()) ||
                   item.subdesc.toUpperCase().includes(search.toUpperCase())
                 : item
             )
-            .map(jogo => (
+            .map((jogo) => (
               <CSSTransition
-              in={appear}
-              leave={true}
-              appear={true}
-              timeout={2000}
-              classNames="fade"
-            >
-              <GameCard jogo={jogo} />
-
-            </CSSTransition>
+                in={appear}
+                leave={true}
+                appear={true}
+                timeout={2000}
+                classNames="fade"
+              >
+                <GameCard jogo={jogo} />
+              </CSSTransition>
             ))}
         </TransitionGroup>
       )}
