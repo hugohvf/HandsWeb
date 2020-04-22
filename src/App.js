@@ -27,13 +27,12 @@ function App() {
             .toLowerCase()
             .split(" ")
             .map((word, i) => {
-              console.log(i);
               let firstLetter = word.charAt(0).toUpperCase();
               if (
                 (firstLetter === "E" ||
                   firstLetter === "A" ||
                   firstLetter === "O" ||
-                  firstLetter === "À" ) &&
+                  firstLetter === "À") &&
                 word.length === 1 &&
                 i !== 0
               )
@@ -44,10 +43,9 @@ function App() {
           return { ...game, game: title };
         });
 
-        setJogos(d.filter((item) => item.game.length > 0));
+        setJogos(d.filter((item) => item.subdesc.length > 0));
         setLoading(false);
       });
-    console.log(jogos);
   }, []);
 
   return (
