@@ -18,7 +18,7 @@ function App() {
   const [appear, setAppear] = useState(true);
 
   useEffect(() => {
-    var result = fetch(ApiURL)
+    fetch(ApiURL)
       .then((response) => response.json())
       .then((d) => {
         d = d.map((game) => {
